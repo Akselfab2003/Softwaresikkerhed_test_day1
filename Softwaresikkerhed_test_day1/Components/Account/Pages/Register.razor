@@ -42,6 +42,11 @@
                 <label for="Input.ConfirmPassword">Confirm Password</label>
                 <ValidationMessage For="() => Input.ConfirmPassword" class="text-danger" />
             </div>
+            <div class="">
+                <InputCheckbox type="password" @bind-Value="Input.Admin" id="Input.Admin" />
+                <label for="Input.Admin">Are you Admin</label>
+                <ValidationMessage For="() => Input.Admin" class="text-danger" />
+            </div>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </EditForm>
     </div>
@@ -78,6 +83,11 @@
         {
             identityErrors = result.Errors;
             return;
+        }
+
+        if (Input.Admin)
+        {
+            await UserManager.AddToRoleAsync(user, "Admin");
         }
 
         Logger.LogInformation("User created a new account with password.");
@@ -141,5 +151,8 @@
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; } = "";
+
+        [Display(Name = "IsAdmin")]
+        public bool Admin { get; set; } = false;
     }
 }
