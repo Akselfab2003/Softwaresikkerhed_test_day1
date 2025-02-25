@@ -1,10 +1,4 @@
 ﻿@page "/"
-@using Microsoft.AspNetCore.Identity
-@using Softwaresikkerhed_test_day1.Components.Account
-@using Softwaresikkerhed_test_day1.Data
-@inject UserManager<ApplicationUser> userManager
-@inject AuthenticationStateProvider AuthenticationState
-
 
 <PageTitle>Home</PageTitle>
 
@@ -12,19 +6,9 @@
 
 <AuthorizeView>
     <Authorized>
-        @if (IsAdmin)
-        {
-            <p>
-                Welcome Admin user to your new app.
-            </p>
-        }
-        else
-        {
             <p>
                 Welcome user to your new app.
             </p>
-        }
-
     </Authorized>
 
     <NotAuthorized>
@@ -35,28 +19,12 @@
 </AuthorizeView>
 
 
+<AuthorizeView Roles="Admin">
+    <Authorized>
+        <p>
+            You are Admin.
+        </p>
+    </Authorized>
+</AuthorizeView>
 
 
-@code{
-
-    public bool IsAdmin { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        var authState = await AuthenticationState.GetAuthenticationStateAsync();
-        var usr = authState.User;
-
-        if (usr.Identity != null && usr.Identity.IsAuthenticated)
-        {
-            var user = await userManager.GetUserAsync(usr);
-            IsAdmin = await userManager.IsInRoleAsync(user, "Admin");
-        }
-        else
-        {
-            IsAdmin = false;
-        }
-
-        await base.OnInitializedAsync();
-    }
-
-}
