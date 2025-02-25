@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softwaresikkerhed_test_day1", "Softwaresikkerhed_test_day1\Softwaresikkerhed_test_day1.csproj", "{85AF669A-D0C3-4A2A-A6D5-8A42A23933E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softwaresikkerhed_test_day1.tests", "Softwaresikkerhed_test_day1.tests\Softwaresikkerhed_test_day1.tests.csproj", "{B6AB7AB6-730D-4AF7-B5F1-6F15BDC77863}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{85AF669A-D0C3-4A2A-A6D5-8A42A23933E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85AF669A-D0C3-4A2A-A6D5-8A42A23933E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85AF669A-D0C3-4A2A-A6D5-8A42A23933E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6AB7AB6-730D-4AF7-B5F1-6F15BDC77863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6AB7AB6-730D-4AF7-B5F1-6F15BDC77863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6AB7AB6-730D-4AF7-B5F1-6F15BDC77863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6AB7AB6-730D-4AF7-B5F1-6F15BDC77863}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
